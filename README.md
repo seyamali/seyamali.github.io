@@ -1,59 +1,50 @@
-# ProfileApp
+# Seyam Ali Biswas | Software Engineer Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+The official professional portfolio of **Md. Seyam Ali Biswas**. This project outlines my experience as a Software Engineer, my technical skill set, and my research publications.
 
-## Development server
+> **Status**: Active  
+> **Tech Stack**: Angular 21, Tailwind CSS
 
-To start a local development server, run:
+## Project Overview
 
-```bash
-ng serve
-```
+This is a single-page application (SPA) designed to present my professional profile. It showcases:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Experience**: Timeline of professional roles and responsibilities.
+- **Skills**: Technical proficiencies in Engineering, Frameworks, and Data.
+- **Research**: Published academic papers and thesis work.
+- **Projects**: Showcase of industrial and personal software projects.
+- **Contact**: Integrated contact information for professional inquiries.
 
-## Code scaffolding
+## Technology Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Framework**: Angular 21 (Standalone Components)
+- **Styling**: Tailwind CSS
+- **Icons**: FontAwesome 6
+- **Build Tool**: Angular CLI
 
-```bash
-ng generate component component-name
-```
+## Setup & Run
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+If you wish to view this project locally:
 
-```bash
-ng generate --help
-```
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-## Building
+2. **Run Development Server**:
+   ```bash
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/`.
 
-To build the project run:
+## Rights & Licensing
 
-```bash
-ng build
-```
+**Copyright © 2026 Seyam Ali Biswas. All Rights Reserved.**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This project is a personal portfolio containing my specific details and work history.
 
-## Running unit tests
+- ✅ **You MAY**: View this code for educational purposes.
+- ❌ **You MAY NOT**: Clone or copy this repository to use as your own portfolio.
+- ❌ **You MAY NOT**: Use the "Seyam." brand, personal text, or photos.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For inquiries, contact: **seyamhossain482@gmail.com**
