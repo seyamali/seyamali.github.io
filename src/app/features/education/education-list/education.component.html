@@ -1,0 +1,21 @@
+<section id="education" class="relative py-32 bg-surface transition-colors duration-700 overflow-hidden">
+    <!-- Geometric detail -->
+    <div
+        class="absolute top-0 left-0 w-64 h-64 border-l border-t border-accent/10 -translate-x-1/2 -translate-y-1/2 rounded-full">
+    </div>
+
+    <div class="container relative mx-auto px-6">
+        <app-section-header title="Academic Pedigree"
+            subtitle="The architectural <span class='text-gradient font-black'>foundation</span> of my knowledge"></app-section-header>
+
+        <div class="max-w-5xl mx-auto">
+            @for (edu of education; track edu.institution) {
+            <div class="mb-12 group">
+                <app-timeline-item [title]="edu.degree" [organization]="edu.institution" [period]="edu.passingYear"
+                    [subtitle]="edu.subject + ' • Result: <span class=\'text-accent font-bold\'>' + edu.result + '</span>'">
+                </app-timeline-item>
+            </div>
+            }
+        </div>
+    </div>
+</section>

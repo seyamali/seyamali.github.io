@@ -1,0 +1,44 @@
+<div class="card-luxury group h-full flex flex-col overflow-hidden animate-luxury-fade-in group/card">
+    <!-- Icon / Image Area -->
+    <div
+        class="relative h-48 flex items-center justify-center overflow-hidden bg-bg-base/50 transition-colors duration-700">
+        <!-- Shimmer Effect -->
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out">
+        </div>
+
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        </div>
+        <div
+            class="relative z-10 text-6xl text-accent transition-all duration-700 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-glow">
+            <i [class]="getIconByType(project.type)"></i>
+        </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="flex flex-grow flex-col p-6 md:p-8">
+        <h3 class="mb-3 text-2xl font-bold text-text-main group-hover:text-accent transition-colors">
+            {{ project.title }}
+        </h3>
+
+        <p class="flex-grow mb-8 text-text-muted leading-relaxed">
+            {{ project.description }}
+        </p>
+
+        <div class="flex items-center justify-between pt-6 border-t border-black/[0.03] dark:border-white/[0.05]">
+            <span
+                class="px-4 py-1.5 text-[10px] font-extrabold tracking-widest uppercase rounded-full bg-accent/5 text-accent border border-accent/10">
+                {{ project.tools }}
+            </span>
+
+            @if (project.link) {
+            <a [href]="project.link" target="_blank"
+                class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
+                View
+                <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+            }
+        </div>
+    </div>
+</div>

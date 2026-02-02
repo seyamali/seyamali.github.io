@@ -1,0 +1,170 @@
+<footer class="relative pt-24 md:pt-32 pb-12 md:pb-16 bg-bg-base transition-colors duration-700 overflow-hidden">
+    <!-- Elite Background Ambiance -->
+    <div
+        class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-50">
+    </div>
+    <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] animate-pulse">
+    </div>
+    <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -translate-y-1/2"></div>
+
+    <div class="container relative mx-auto px-4 md:px-6">
+        <!-- High-Impact CTA Section -->
+        <div
+            class="mb-20 md:mb-32 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:items-end">
+            <div class="lg:col-span-8">
+                <h2
+                    class="text-4xl md:text-7xl lg:text-8xl font-black text-text-main tracking-tighter leading-[1] md:leading-[0.9] mb-10 md:mb-12 animate-luxury-slide-up">
+                    Ready to <span class="text-gradient italic">architect</span> <br class="hidden md:block"> the
+                    future?
+                </h2>
+                <div class="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
+                    <a [href]="'mailto:' + profile.email"
+                        class="btn-luxury bg-accent text-white shadow-glow px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl flex items-center gap-4">
+                        Let's Talk
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-4 flex justify-center lg:justify-end animate-luxury-fade-in"
+                style="animation-delay: 0.3s">
+                <div
+                    class="glass-effect p-6 md:p-8 rounded-[2rem] border-white/5 shadow-luxury w-full max-w-xs text-center lg:text-right">
+                    <p class="text-text-muted font-medium mb-3 md:mb-4 text-xs md:text-sm tracking-wide">Currently based
+                        in</p>
+                    <p class="text-xl md:text-2xl font-black text-text-main tracking-tight">{{ profile.location }}</p>
+                    <div class="flex items-center gap-2 justify-center lg:justify-end mt-4">
+                        <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+                        <span
+                            class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-success/80">Open
+                            for Global Inquiry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sophisticated Links Grid -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-32 pt-16 md:pt-24 border-t border-black/[0.05] dark:border-white/[0.05]">
+            <!-- Signature Column -->
+            <div class="lg:col-span-4 text-center lg:text-left">
+                <a href="#" class="group relative inline-flex items-center gap-3 mb-8 md:mb-10">
+                    <div
+                        class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-primary text-white font-black text-xl md:text-2xl transition-transform group-hover:scale-110 group-hover:rotate-3 shadow-luxury">
+                        S
+                    </div>
+                    <span class="text-2xl md:text-3xl font-black text-text-main tracking-tighter">
+                        eyam<span class="text-accent">.</span>
+                    </span>
+                </a>
+                <p
+                    class="text-text-muted leading-relaxed font-medium text-base md:text-lg max-w-sm mx-auto lg:mx-0 mb-8 md:mb-10">
+                    Architecting high-performance digital systems and engineering seamless user experiences with a focus
+                    on precision and scale.
+                </p>
+                <div class="flex gap-4 justify-center lg:justify-start">
+                    <a [href]="profile.github" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-surface border border-black/[0.03] dark:border-white/[0.05] text-text-main hover:bg-accent hover:text-white transition-all duration-500 shadow-luxury hover:-translate-y-2">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/seyamali" target="_blank"
+                        class="w-12 h-12 flex items-center justify-center rounded-2xl bg-surface border border-black/[0.03] dark:border-white/[0.05] text-text-main hover:bg-[#0077b5] hover:text-white transition-all duration-500 shadow-luxury hover:-translate-y-2">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Pillars -->
+            <div class="lg:col-span-4 grid grid-cols-2 gap-8 md:gap-12">
+                <div class="space-y-8 md:space-y-10 text-center md:text-left">
+                    <h4 class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-text-main/50">
+                        Discovery</h4>
+                    <ul class="space-y-4 md:space-y-6">
+                        @for (link of ['Experience', 'Skills', 'Research']; track link) {
+                        <li>
+                            <a [href]="'#' + link.toLowerCase()"
+                                class="text-text-muted hover:text-accent font-bold transition-all duration-300 hover:translate-x-2 block">
+                                {{ link }}
+                            </a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+                <div class="space-y-8 md:space-y-10 text-center md:text-left">
+                    <h4 class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-text-main/50">
+                        Development</h4>
+                    <ul class="space-y-4 md:space-y-6">
+                        @for (link of ['Projects', 'Education']; track link) {
+                        <li>
+                            <a [href]="'#' + link.toLowerCase()"
+                                class="text-text-muted hover:text-accent font-bold transition-all duration-300 hover:translate-x-2 block">
+                                {{ link }}
+                            </a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Showcase -->
+            <div
+                class="lg:col-span-4 bg-accent/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 border border-accent/10 relative overflow-hidden group">
+                <div
+                    class="absolute -top-12 -right-12 w-40 h-40 bg-accent/20 rounded-full blur-3xl group-hover:bg-accent/30 transition-colors">
+                </div>
+                <h4 class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-accent mb-8 md:mb-10">
+                    Direct Channel</h4>
+                <a [href]="'mailto:' + profile.email"
+                    class="text-xl md:text-2xl font-black text-text-main hover:text-accent transition-colors block mb-4 break-all">
+                    {{ profile.email }}
+                </a>
+                <p class="text-text-muted font-bold tracking-tight mb-6">{{ profile.phone }}</p>
+
+                <!-- Instant Messengers -->
+                <div class="flex gap-4 mb-8">
+                    <a href="https://wa.me/8801989424982" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-bg-base flex items-center justify-center group hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm hover:shadow-glow">
+                        <i class="fab fa-whatsapp text-[#25D366] group-hover:text-white text-xl"></i>
+                    </a>
+                    <a href="https://t.me/+8801989424982" target="_blank"
+                        class="w-10 h-10 rounded-xl bg-bg-base flex items-center justify-center group hover:bg-[#0088cc] hover:text-white transition-all duration-300 shadow-sm hover:shadow-glow">
+                        <i class="fab fa-telegram-plane text-[#0088cc] group-hover:text-white text-xl"></i>
+                    </a>
+                </div>
+
+                <div class="h-px w-20 bg-accent/30 mb-8 mx-auto lg:mx-0"></div>
+                <p class="text-sm font-medium text-text-muted/60 italic leading-relaxed text-center lg:text-left">
+                    Available for senior engineering roles, architectural consultations, and research collaborations.
+                </p>
+            </div>
+        </div>
+
+        <!-- Baseline Excellence -->
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 pt-12 md:pt-16 border-t border-black/[0.05] dark:border-white/[0.05]">
+            <div class="flex items-center gap-6">
+                <p
+                    class="text-text-muted text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-center md:text-left">
+                    &copy; {{ currentYear }} <span class="text-text-main">Seyam Ali Biswas</span>
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+                <!-- Live Tech Stack Pill -->
+                <div
+                    class="px-4 md:px-5 py-1.5 md:py-2 rounded-full glass-effect border-white/5 flex items-center gap-3">
+                    <div class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-success animate-pulse"></div>
+                    <span
+                        class="text-[8px] md:text-[9px] font-black text-text-muted uppercase tracking-[0.2em]">Architecture:
+                        Angular 18 LTS</span>
+                </div>
+                <!-- Status Code -->
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt text-success/40 text-[10px]"></i>
+                    <span
+                        class="text-[8px] md:text-[9px] font-black text-text-muted uppercase tracking-[0.2em]">Deployment:
+                        Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

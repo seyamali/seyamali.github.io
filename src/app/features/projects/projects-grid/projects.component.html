@@ -1,0 +1,26 @@
+<section id="projects" class="relative py-32 bg-surface transition-colors duration-700 overflow-hidden">
+    <!-- Fluid background detail -->
+    <div class="absolute -top-48 right-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px] opacity-50"></div>
+
+    <div class="container relative mx-auto px-6">
+        <app-section-header title="Portfolio Gallery"
+            subtitle="Showcasing my most <span class='text-gradient font-black'>ambitious</span> projects"></app-section-header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+            @for (project of projects; track project.title) {
+            <div class="animate-luxury-slide-up" [style.animation-delay]="$index * 0.2 + 's'">
+                <app-project-card [project]="project"></app-project-card>
+            </div>
+            }
+        </div>
+
+        <div class="mt-24 text-center">
+            <p class="text-text-muted font-bold tracking-[0.2em] uppercase text-xs mb-8">Ready to see more?</p>
+            <a href="https://github.com/seyamali" target="_blank"
+                class="btn-luxury inline-flex items-center gap-4 bg-primary text-white hover:scale-105 transition-transform shadow-luxury">
+                Explore Repository
+                <i class="fab fa-github text-lg"></i>
+            </a>
+        </div>
+    </div>
+</section>

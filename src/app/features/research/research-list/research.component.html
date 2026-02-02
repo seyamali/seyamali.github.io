@@ -1,0 +1,71 @@
+<section id="research" class="relative py-32 bg-bg-base transition-colors duration-700 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+
+    <div class="container relative mx-auto px-6">
+        <app-section-header title="Cognitive Contributions"
+            subtitle="My <span class='text-gradient font-black'>scientific</span> inquiry &amp; data research"></app-section-header>
+
+        <div class="max-w-6xl mx-auto space-y-12 md:space-y-16">
+            @for (item of research; track item.title) {
+            <div class="card-luxury p-8 md:p-12 relative overflow-hidden group hover:border-accent/20 transition-all duration-700 animate-luxury-slide-up"
+                [style.animation-delay]="$index * 0.3 + 's'">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-start">
+                    <!-- Left: Metadata -->
+                    <div class="lg:col-span-4 lg:border-r border-black/[0.03] dark:border-white/[0.05] lg:pr-8">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i class="fas fa-microscope text-accent text-xs"></i>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-accent">
+                                {{ item.type === 'publication' ? 'PEER REVIEWED' : 'ACADEMIC THESIS' }}
+                            </span>
+                        </div>
+
+                        @if (item.journal) {
+                        <p class="text-text-main font-extrabold text-xl mb-2">{{ item.journal }}</p>
+                        <p class="text-text-muted text-sm font-medium italic opacity-70">{{ item.date }}</p>
+                        }
+
+                        <div class="mt-10 pt-10 border-t border-black/[0.03] dark:border-white/[0.05]">
+                            <span
+                                class="text-[10px] font-black uppercase tracking-[0.2em] text-text-muted mb-4 block">Primary
+                                Authors</span>
+                            <p class="text-text-main text-sm font-semibold leading-relaxed">{{ item.authors?.join(', ')
+                                }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="lg:col-span-8">
+                        <h3
+                            class="mb-8 text-3xl md:text-4xl font-extrabold text-text-main group-hover:text-accent transition-colors tracking-tighter leading-tight">
+                            {{ item.title }}
+                        </h3>
+
+                        <div class="space-y-6">
+                            @for (line of item.description; track line) {
+                            <div class="flex gap-6 group/item">
+                                <div
+                                    class="w-2 h-2 rounded-full bg-accent mt-2.5 shrink-0 opacity-20 group-hover/item:opacity-100 transition-opacity">
+                                </div>
+                                <p class="text-text-muted text-lg leading-relaxed font-medium">{{ line }}</p>
+                            </div>
+                            }
+                        </div>
+
+                        @if (item.link) {
+                        <div class="mt-12">
+                            <a [href]="item.link" target="_blank"
+                                class="text-sm font-black text-text-main uppercase tracking-widest flex items-center gap-3 group/link">
+                                Read Full Paper
+                                <i class="fas fa-arrow-right transition-transform group-hover/link:translate-x-2"></i>
+                            </a>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

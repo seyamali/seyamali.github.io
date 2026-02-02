@@ -1,0 +1,43 @@
+<div class="relative pl-8 md:pl-12 pb-12 last:pb-0 group animate-luxury-fade-in">
+    <!-- Vertical Line -->
+    <div
+        class="absolute left-3 md:left-4 top-0 h-full w-[2px] bg-accent/10 transition-colors duration-500 group-hover:bg-accent/30">
+    </div>
+
+    <!-- Dot -->
+    <div
+        class="absolute left-[-4px] md:left-0 top-0 flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-surface border-2 border-accent transition-all duration-500 group-hover:scale-125 group-hover:bg-accent">
+        <div class="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-accent group-hover:bg-white transition-colors"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="card-luxury p-6 md:p-8 transition-all duration-500 group-hover:shadow-luxury-hover">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div>
+                <h3 class="text-xl md:text-2xl font-bold text-text-main mb-1 tracking-tight">{{ title }}</h3>
+                <p class="text-accent font-bold tracking-widest uppercase text-[10px]">{{ organization }}</p>
+            </div>
+            <span
+                class="px-4 py-1.5 text-[10px] font-extrabold tracking-widest uppercase rounded-full bg-bg-base text-text-muted border border-black/[0.03] dark:border-white/[0.05] whitespace-nowrap">
+                {{ period }}
+            </span>
+        </div>
+
+        @if (subtitle) {
+        <p class="text-text-main font-semibold text-sm mb-4 border-l-4 border-accent/20 pl-4 py-1">
+            {{ subtitle }}
+        </p>
+        }
+
+        @if (points && points.length > 0) {
+        <ul class="space-y-4">
+            @for (point of points; track point) {
+            <li class="flex gap-4 text-text-muted leading-relaxed text-sm">
+                <i class="fas fa-check-circle text-accent/40 mt-1 text-xs shrink-0"></i>
+                <span>{{ point }}</span>
+            </li>
+            }
+        </ul>
+        }
+    </div>
+</div>

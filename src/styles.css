@@ -1,3 +1,200 @@
-/* You can add global styles to this file, and also import other style files */
+/* Font Awesome & Google Fonts */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
+
+@theme {
+  /* Luxury Color Palette */
+  --color-primary: var(--primary);
+  --color-bg-base: var(--bg-base);
+  --color-surface: var(--surface);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --font-outfit: "Outfit", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* Luxury Shadows */
+  --shadow-luxury: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  --shadow-luxury-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+:root {
+  /* Light Mode - Professional & Clean */
+  --primary: #2c3e50;
+  --bg-base: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --accent: #3498db;
+
+  --transition-speed: 0.4s;
+  --luxury-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  /* Dark Mode - Deep & Sophisticated */
+  --primary: #60a5fa;
+  --bg-base: #0f172a;
+  --surface: #1e293b;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+}
+
+@layer base {
+  body {
+    @apply font-inter text-text-main bg-bg-base antialiased transition-colors duration-500 overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-outfit tracking-tight;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+
+  /* Luxury Animations */
+  .animate-luxury-fade-in {
+    animation: luxuryFadeIn 1s var(--luxury-ease) forwards;
+  }
+
+  .animate-luxury-slide-up {
+    animation: luxurySlideUp 0.8s var(--luxury-ease) forwards;
+  }
+
+  .animate-reveal {
+    animation: luxuryReveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glass-effect {
+    @apply bg-surface/70 backdrop-blur-xl border border-white/10;
+  }
+
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.4));
+  }
+
+  .luxury-border {
+    @apply relative overflow-hidden;
+  }
+
+  .luxury-border::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent transition-all duration-700;
+  }
+
+  .luxury-border:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer components {
+  .btn-luxury {
+    @apply relative px-8 py-3 rounded-full font-semibold transition-all duration-500 hover:shadow-glow hover:-translate-y-1 active:scale-95 overflow-hidden;
+  }
+
+  .btn-luxury::before {
+    content: '';
+    @apply absolute inset-0 bg-white/10 -translate-x-full skew-x-12 transition-transform duration-700;
+  }
+
+  .btn-luxury:hover::before {
+    @apply translate-x-full;
+  }
+
+  .card-luxury {
+    @apply bg-surface rounded-[2rem] border border-black/[0.03] dark:border-white/[0.05] shadow-luxury transition-all duration-700 hover:shadow-luxury-hover hover:-translate-y-3;
+  }
+}
+
+@keyframes luxuryFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes luxurySlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxuryReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-30px);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+/* Smooth Scroll Snap behavior or similar can go here if needed */
+html {
+  @apply scroll-pt-32;
+}
+
+/* Page Transition Overlay */
+.page-transition {
+  @apply fixed inset-0 z-[9999] bg-bg-base pointer-events-none;
+  animation: pageFadeOut 0.8s ease-in-out forwards;
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
