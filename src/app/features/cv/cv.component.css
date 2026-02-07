@@ -1,0 +1,92 @@
+/* Normal Web View Styles */
+.cv-page-wrapper {
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cv-container {
+    background-color: white;
+    color: black;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.print-table {
+    width: 210mm;
+    border-collapse: collapse;
+}
+
+.page-header-space,
+.page-footer-space {
+    height: 0;
+}
+
+/* Page Break & Section Flow */
+section {
+    margin-bottom: 2rem;
+    break-inside: avoid;
+}
+
+/* Print Specific Styles */
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+        /* Important: Removes Date/URL text */
+    }
+
+    body {
+        margin: 0 !important;
+        background: white !important;
+    }
+
+    .cv-page-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: white !important;
+        display: block !important;
+    }
+
+    .print-table {
+        width: 100% !important;
+    }
+
+    /* Repeat header/footer space on every page */
+    .page-header-space {
+        height: 15mm;
+        /* Reduced slightly for better fit */
+    }
+
+    .page-footer-space {
+        height: 15mm;
+        /* Reduced slightly for better fit */
+    }
+
+    .cv-container {
+        width: 100% !important;
+        padding: 0 15mm !important;
+        /* Side padding adjusted */
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Prevent browser headers from showing up */
+    button {
+        display: none !important;
+    }
+
+    section {
+        margin-bottom: 1.25rem !important;
+        /* Tighter section spacing for print */
+        break-inside: avoid;
+    }
+}

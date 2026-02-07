@@ -32,13 +32,23 @@
                 {{ project.tools }}
             </span>
 
-            @if (project.link) {
-            <a [href]="project.link" target="_blank"
-                class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
-                View
-                <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
-            </a>
-            }
+            <div class="flex items-center gap-4">
+                @if (project.link) {
+                <a [href]="project.link" target="_blank"
+                    class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
+                    {{ getLinkLabel(project.link, project.type) }}
+                    <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+                </a>
+                }
+                @if (project.demoLink) {
+                <a [href]="project.demoLink" target="_blank"
+                    class="flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-hover transition-colors group/link">
+                    Demo
+                    <i
+                        class="fas fa-external-link-alt text-xs transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"></i>
+                </a>
+                }
+            </div>
         </div>
     </div>
 </div>

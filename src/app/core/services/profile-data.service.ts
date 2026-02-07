@@ -36,7 +36,7 @@ export class ProfileDataService {
             institution: 'Daffodil International University',
             degree: 'Bachelor of Science in Computer Science and Engineering',
             subject: 'Computer Science and Engineering',
-            result: '3.84 / 4.00 (Distinction)',
+            result: '3.84 / 4.00',
             passingYear: '2024'
         },
         {
@@ -104,6 +104,21 @@ export class ProfileDataService {
 
     readonly projects: Project[] = [
         {
+            title: 'Raw Nation (Official Site)',
+            description: 'Architected and developed the comprehensive frontend infrastructure for Raw Nation\'s official e-commerce platform, ensuring a seamless, high-performance shopping experience with Angular 21 SSR.',
+            tools: 'Angular 21, SSR, Bootstrap, Custom CSS',
+            link: 'https://rawnation.net/',
+            type: 'web'
+        },
+        {
+            title: 'Aurelia Editor',
+            description: 'A high-fidelity, customizable rich text editor for modern web applications with seamless integration support.',
+            tools: 'TypeScript, NPM, Rollup',
+            link: 'https://www.npmjs.com/package/@seyamali/aurelia-editor',
+            demoLink: 'https://aurelia-editor-playground.vercel.app/',
+            type: 'npm'
+        },
+        {
             title: 'Bahari Financial Engine',
             description: 'A robust mobile orchestration tool for dynamic invoice generation and financial reporting, facilitating seamless itemized ledger exports via PDF.',
             tools: 'Flutter, Dart, Provider States',
@@ -119,12 +134,14 @@ export class ProfileDataService {
             title: 'Enterprise Student Management',
             description: 'Developed a high-performance record-management system using optimized linked-list structures for high-speed data retrieval and administrative efficiency.',
             tools: 'C (Data Structures)',
+            link: 'https://github.com/seyamali/Enterprise-Student-Management-System',
             type: 'c'
         },
         {
             title: 'Orion Hotel Oracle',
             description: 'A full-scale hospitality management suite for real-time room orchestration, automated inventory control, and secure customer data handling.',
             tools: 'Java (Swing/JDBC UI)',
+            link: 'https://github.com/seyamali/Orion-Hotel-Oracle',
             type: 'java'
         },
         {

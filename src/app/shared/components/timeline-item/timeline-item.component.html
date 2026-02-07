@@ -24,8 +24,8 @@
         </div>
 
         @if (subtitle) {
-        <p class="text-text-main font-semibold text-sm mb-4 border-l-4 border-accent/20 pl-4 py-1">
-            {{ subtitle }}
+        <p class="text-text-main font-semibold text-sm mb-4 border-l-4 border-accent/20 pl-4 py-1"
+            [innerHTML]="subtitle">
         </p>
         }
 
@@ -34,7 +34,7 @@
             @for (point of points; track point) {
             <li class="flex gap-4 text-text-muted leading-relaxed text-sm">
                 <i class="fas fa-check-circle text-accent/40 mt-1 text-xs shrink-0"></i>
-                <span>{{ point }}</span>
+                <span [innerHTML]="point"></span>
             </li>
             }
         </ul>

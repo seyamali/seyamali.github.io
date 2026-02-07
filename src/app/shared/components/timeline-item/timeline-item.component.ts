@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './timeline-item.component.html',
-  styleUrl: './timeline-item.component.css'
+  styleUrl: './timeline-item.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class TimelineItemComponent {
   @Input() title: string = '';

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileDataService } from '../../../core/services/profile-data.service';
 import { SectionHeaderComponent } from '../../../shared/components/section-header/section-header.component';
@@ -8,7 +8,8 @@ import { SectionHeaderComponent } from '../../../shared/components/section-heade
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent],
   templateUrl: './research.component.html',
-  styleUrl: './research.component.css'
+  styleUrl: './research.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class ResearchComponent {
   private dataService = inject(ProfileDataService);

@@ -1,0 +1,169 @@
+<div class="cv-page-wrapper">
+    <!-- Professional Print Table (Ensures margins on every page) -->
+    <table class="print-table">
+        <thead>
+            <tr>
+                <td>
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div id="cv-content" class="cv-container bg-white">
+                        <!-- Header -->
+                        <header class="border-b-4 border-black pb-6 mb-8 flex justify-between items-end">
+                            <div>
+                                <h1 class="text-4xl font-black tracking-tight uppercase mb-1">{{ profile.name }}</h1>
+                                <p class="text-xl font-bold text-gray-700 tracking-wide">{{ profile.title }}</p>
+                            </div>
+                            <div class="text-right text-xs space-y-1 font-semibold text-gray-600">
+                                <p><i class="fas fa-envelope mr-2"></i>{{ profile.email }}</p>
+                                <p><i class="fas fa-phone mr-2"></i>{{ profile.phone }}</p>
+                                <p><i class="fas fa-map-marker-alt mr-2"></i>{{ profile.location }}</p>
+                                <p><i class="fab fa-github mr-2"></i>github.com/{{ profile.github.split('/').pop() }}
+                                </p>
+                            </div>
+                        </header>
+
+                        <!-- Career Objective -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Career Objective</h2>
+                            <p class="text-sm leading-relaxed text-gray-800 text-justify">
+                                {{ profile.summary }}
+                            </p>
+                        </section>
+
+                        <!-- Technical Skills -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Technical Skills</h2>
+                            <div class="grid grid-cols-2 gap-4 text-xs">
+                                <div *ngFor="let group of skills" class="mb-2">
+                                    <p class="font-black uppercase mb-1 text-gray-900 leading-none">{{ group.category }}
+                                    </p>
+                                    <p class="text-gray-700">{{ group.items.join(', ') }}</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Professional Experience -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Professional Experience</h2>
+                            <div *ngFor="let exp of experiences" class="mb-6 last:mb-0">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h3 class="text-sm font-black text-gray-900">{{ exp.company }}</h3>
+                                    <span class="text-[10px] font-bold text-gray-500 uppercase">{{ exp.period }}</span>
+                                </div>
+                                <p class="text-[11px] font-extrabold text-blue-800 uppercase tracking-wider mb-2">{{
+                                    exp.role }}</p>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li *ngFor="let res of exp.responsibilities"
+                                        class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>{{ res }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Academic Background -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Academic Background</h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b-2 border-gray-200">
+                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500">
+                                                Qualification</th>
+                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500">Institution
+                                            </th>
+                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500 text-center">
+                                                Year</th>
+                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500 text-right">
+                                                Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let edu of education"
+                                            class="border-b border-gray-100 last:border-0">
+                                            <td class="py-3 pr-4">
+                                                <p class="text-xs font-bold text-gray-900">{{ edu.degree }}</p>
+                                                <p class="text-[10px] text-gray-500">{{ edu.subject }}</p>
+                                            </td>
+                                            <td class="py-3 pr-4 text-xs font-semibold text-gray-700">{{ edu.institution
+                                                }}</td>
+                                            <td class="py-3 text-xs font-bold text-gray-900 text-center">{{
+                                                edu.passingYear }}</td>
+                                            <td class="py-3 text-xs font-black text-blue-800 text-right">{{ edu.result
+                                                }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Research & Publications -->
+                        <section class="mb-8" *ngIf="research.length > 0">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Research & Publications</h2>
+                            <div *ngFor="let item of research" class="mb-6 last:mb-0">
+                                <h3 class="text-xs font-extrabold text-gray-900 mb-1 leading-tight">{{ item.title }}
+                                </h3>
+                                <p class="text-[10px] text-gray-500 mb-2 font-bold">{{ item.journal }} | {{ item.date }}
+                                </p>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li *ngFor="let desc of item.description"
+                                        class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>{{ desc }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- Key Projects -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                Key Projects</h2>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-4">
+                                <div *ngFor="let proj of projects" class="border-l-2 border-gray-100 pl-3">
+                                    <h3 class="text-xs font-black text-gray-900 leading-tight mb-1">{{ proj.title }}
+                                    </h3>
+                                    <p class="text-[10px] text-gray-600 leading-snug mb-1 text-justify">{{
+                                        proj.description }}</p>
+                                    <p class="text-[9px] font-black text-accent uppercase tracking-tighter">{{
+                                        proj.tools }}</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>
+                    <div class="page-footer-space"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Floating Action Button -->
+    <button (click)="printCv()"
+        class="fixed bottom-10 right-10 z-[100] bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-4 print:hidden">
+        <i class="fas fa-file-pdf"></i>
+        Download CV (PDF)
+    </button>
+</div>

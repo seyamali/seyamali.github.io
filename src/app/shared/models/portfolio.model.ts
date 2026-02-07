@@ -35,7 +35,8 @@ export interface Project {
   description: string;
   tools: string;
   link?: string;
-  type: 'android' | 'web' | 'c' | 'java' | 'graphics' | 'flutter';
+  demoLink?: string;
+  type: 'android' | 'web' | 'c' | 'java' | 'graphics' | 'flutter' | 'npm';
 }
 
 export interface Research {

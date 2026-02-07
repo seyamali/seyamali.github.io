@@ -20,7 +20,15 @@ export class ProjectCardComponent {
             case 'java': return 'fab fa-java';
             case 'graphics': return 'fas fa-paint-brush';
             case 'flutter': return 'fas fa-mobile-alt';
+            case 'npm': return 'fab fa-npm';
             default: return 'fas fa-laptop-code';
         }
+    }
+
+    getLinkLabel(link: string, type: string): string {
+        if (!link) return '';
+        if (link.includes('github.com')) return 'Source';
+        if (type === 'npm') return 'NPM';
+        return 'Live Link';
     }
 }
