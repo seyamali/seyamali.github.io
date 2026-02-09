@@ -90,3 +90,19 @@ section {
         break-inside: avoid;
     }
 }
+
+@media screen and (max-width: 210mm) {
+    .cv-page-wrapper {
+        padding: 10px;
+    }
+
+    .cv-container {
+        width: 100%;
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .print-table {
+        width: 100%;
+    }
+}
