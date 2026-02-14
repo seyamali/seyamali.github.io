@@ -1,4 +1,10 @@
-<div class="card-luxury group h-full flex flex-col overflow-hidden animate-luxury-fade-in group/card">
+<div class="card-luxury group h-full flex flex-col overflow-hidden animate-luxury-fade-in group/card relative">
+    <!-- Global Link Overlay -->
+    @if (project.link) {
+    <a [href]="project.link" target="_blank" [attr.aria-label]="'View ' + project.title"
+        class="absolute inset-0 z-10 focus:outline-none"></a>
+    }
+
     <!-- Icon / Image Area -->
     <div
         class="relative h-48 flex items-center justify-center overflow-hidden bg-bg-base/50 transition-colors duration-700">
@@ -11,22 +17,23 @@
             class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
         </div>
         <div
-            class="relative z-10 text-6xl text-accent transition-all duration-700 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-glow">
+            class="relative z-0 text-6xl text-accent transition-all duration-700 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-glow">
             <i [class]="getIconByType(project.type)"></i>
         </div>
     </div>
 
     <!-- Content Area -->
     <div class="flex flex-grow flex-col p-6 md:p-8">
-        <h3 class="mb-3 text-2xl font-bold text-text-main group-hover:text-accent transition-colors">
+        <h3 class="mb-3 text-2xl font-bold text-text-main group-hover:text-accent transition-colors relative z-0">
             {{ project.title }}
         </h3>
 
-        <p class="flex-grow mb-8 text-text-muted leading-relaxed">
+        <p class="flex-grow mb-8 text-text-muted leading-relaxed relative z-0">
             {{ project.description }}
         </p>
 
-        <div class="flex items-center justify-between pt-6 border-t border-black/[0.03] dark:border-white/[0.05]">
+        <div
+            class="flex items-center justify-between pt-6 border-t border-black/[0.03] dark:border-white/[0.05] relative z-20">
             <span
                 class="px-4 py-1.5 text-[10px] font-extrabold tracking-widest uppercase rounded-full bg-accent/5 text-accent border border-accent/10">
                 {{ project.tools }}

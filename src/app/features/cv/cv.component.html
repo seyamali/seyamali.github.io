@@ -17,7 +17,7 @@
                         <header
                             class="border-b-4 border-black pb-6 mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-4 md:gap-0">
                             <div>
-                                <h1 class="text-4xl font-black tracking-tight uppercase mb-1">{{ profile.name }}</h1>
+                                <h1 class="text-4xl font-bold tracking-normal uppercase mb-1">{{ profile.name }}</h1>
                                 <p class="text-xl font-bold text-gray-700 tracking-wide">{{ profile.title }}</p>
                             </div>
                             <div class="text-left md:text-right text-xs space-y-1 font-semibold text-gray-600">
@@ -32,7 +32,7 @@
                         <!-- Career Objective -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Career Objective</h2>
                             <p class="text-sm leading-relaxed text-gray-800 text-justify">
                                 {{ profile.summary }}
@@ -42,11 +42,11 @@
                         <!-- Technical Skills -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Technical Skills</h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                                 <div *ngFor="let group of skills" class="mb-2">
-                                    <p class="font-black uppercase mb-1 text-gray-900 leading-none">{{ group.category }}
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">{{ group.category }}
                                     </p>
                                     <p class="text-gray-700">{{ group.items.join(', ') }}</p>
                                 </div>
@@ -56,14 +56,14 @@
                         <!-- Professional Experience -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Professional Experience</h2>
                             <div *ngFor="let exp of experiences" class="mb-6 last:mb-0">
                                 <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
-                                    <h3 class="text-sm font-black text-gray-900">{{ exp.company }}</h3>
+                                    <h3 class="text-sm font-bold text-gray-900">{{ exp.company }}</h3>
                                     <span class="text-[10px] font-bold text-gray-500 uppercase">{{ exp.period }}</span>
                                 </div>
-                                <p class="text-[11px] font-extrabold text-blue-800 uppercase tracking-wider mb-2">{{
+                                <p class="text-[11px] font-bold text-blue-800 uppercase tracking-normal mb-2">{{
                                     exp.role }}</p>
                                 <ul class="list-disc list-inside space-y-1">
                                     <li *ngFor="let res of exp.responsibilities"
@@ -77,19 +77,19 @@
                         <!-- Academic Background -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Academic Background</h2>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left border-collapse">
                                     <thead>
                                         <tr class="border-b-2 border-gray-200">
-                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500">
+                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500">
                                                 Qualification</th>
-                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500">Institution
+                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500">Institution
                                             </th>
-                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500 text-center">
+                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500 text-center">
                                                 Year</th>
-                                            <th class="py-2 text-[10px] font-black uppercase text-gray-500 text-right">
+                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500 text-right">
                                                 Result</th>
                                         </tr>
                                     </thead>
@@ -104,7 +104,7 @@
                                                 }}</td>
                                             <td class="py-3 text-xs font-bold text-gray-900 text-center">{{
                                                 edu.passingYear }}</td>
-                                            <td class="py-3 text-xs font-black text-blue-800 text-right">{{ edu.result
+                                            <td class="py-3 text-xs font-bold text-blue-800 text-right">{{ edu.result
                                                 }}</td>
                                         </tr>
                                     </tbody>
@@ -115,10 +115,10 @@
                         <!-- Research & Publications -->
                         <section class="mb-8" *ngIf="research.length > 0">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Research & Publications</h2>
                             <div *ngFor="let item of research" class="mb-6 last:mb-0">
-                                <h3 class="text-xs font-extrabold text-gray-900 mb-1 leading-tight">{{ item.title }}
+                                <h3 class="text-xs font-bold text-gray-900 mb-1 leading-tight">{{ item.title }}
                                 </h3>
                                 <p class="text-[10px] text-gray-500 mb-2 font-bold">{{ item.journal }} | {{ item.date }}
                                 </p>
@@ -134,15 +134,15 @@
                         <!-- Key Projects -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-black uppercase tracking-[0.2em] bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
                                 Key Projects</h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                                 <div *ngFor="let proj of projects" class="border-l-2 border-gray-100 pl-3">
-                                    <h3 class="text-xs font-black text-gray-900 leading-tight mb-1">{{ proj.title }}
+                                    <h3 class="text-xs font-bold text-gray-900 leading-tight mb-1">{{ proj.title }}
                                     </h3>
                                     <p class="text-[10px] text-gray-600 leading-snug mb-1 text-justify">{{
                                         proj.description }}</p>
-                                    <p class="text-[9px] font-black text-accent uppercase tracking-tighter">{{
+                                    <p class="text-[9px] font-semibold text-accent uppercase tracking-normal">{{
                                         proj.tools }}</p>
                                 </div>
                             </div>

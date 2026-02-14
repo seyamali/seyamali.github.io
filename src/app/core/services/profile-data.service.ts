@@ -12,7 +12,7 @@ export class ProfileDataService {
         phone: '+8801989424982',
         github: 'https://github.com/seyamali',
         location: 'Gazipur, Dhaka, Bangladesh',
-        summary: "An analytically-driven Software Engineer and Computer Science researcher with a perfect record of academic excellence (CGPA 3.84/4.00, DIU). Currently spearheading the development of enterprise-scale industrial applications at Islam Garments Ltd, specializing in a modern tech stack centered on Angular and the .NET ecosystem. My expertise bridges the gap between high-performance software architecture and scientific research, as evidenced by my published work with Elsevier on AI-driven computer vision systems. I am dedicated to engineering secure, scalable, and impactful digital solutions that solve complex industrial challenges.",
+        summary: "Analytically driven Software Engineer and Researcher with a distinction-level academic record (CGPA 3.84/4.00). Currently engineering robust enterprise solutions at Islam Garments Ltd, specializing in high-performance architectures using Angular and .NET. My background uniquely blends full-stack development with scientific rigor, demonstrated by published research in AI vision systems with Elsevier. Focused on designing scalable, secure systems that solve real-world industrial problems.",
         objective: 'Seeking to leverage my background in full-stack engineering and machine learning research to architect high-performance software systems in an innovation-driven environment.',
         profileImage: 'assets/images/seyam.png'
     };
@@ -115,7 +115,7 @@ export class ProfileDataService {
             description: 'A high-fidelity, customizable rich text editor for modern web applications with seamless integration support.',
             tools: 'TypeScript, NPM, Rollup',
             link: 'https://www.npmjs.com/package/@seyamali/aurelia-editor',
-            demoLink: 'https://aurelia-editor-playground.vercel.app/',
+            demoLink: 'https://aurelia-editor-playground-theta.vercel.app/',
             type: 'npm'
         },
         {

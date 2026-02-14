@@ -39,13 +39,15 @@ section {
 @media print {
     @page {
         size: auto;
-        margin: 0;
-        /* Important: Removes Date/URL text */
+        margin: 5mm;
+        /* Minimal browser margin */
     }
 
     body {
         margin: 0 !important;
         background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .cv-page-wrapper {
@@ -59,21 +61,20 @@ section {
         width: 100% !important;
     }
 
-    /* Repeat header/footer space on every page */
+    /* Minimal header/footer space to maximize content area */
     .page-header-space {
-        height: 15mm;
-        /* Reduced slightly for better fit */
+        height: 5mm;
+        /* Give a little breathing room at top */
     }
 
     .page-footer-space {
-        height: 15mm;
-        /* Reduced slightly for better fit */
+        height: 5mm;
     }
 
     .cv-container {
         width: 100% !important;
-        padding: 0 15mm !important;
-        /* Side padding adjusted */
+        padding: 0 10mm !important;
+        /* Restore some side padding */
         margin: 0 !important;
         box-shadow: none !important;
         border: none !important;
@@ -85,10 +86,86 @@ section {
     }
 
     section {
-        margin-bottom: 1.25rem !important;
-        /* Tighter section spacing for print */
+        margin-bottom: 1.2rem !important;
+        /* Restore modern spacing */
         break-inside: avoid;
     }
+
+    /* Force Grid Layouts to 2 Columns in Print to save vertical space */
+    .grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* Override Tailwind utility spacing for print */
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        padding-bottom: 1rem !important;
+        /* More elegant spacing */
+        margin-bottom: 1.5rem !important;
+        border-bottom-width: 4px !important;
+        /* Thicker, bolder line */
+        gap: 20px !important;
+    }
+
+    /* Target the first div (Name/Title) */
+    header>div:first-child {
+        text-align: left !important;
+        flex: 1 !important;
+    }
+
+    /* Force right alignment for contact info in print */
+    header>div:last-child {
+        text-align: right !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        display: block !important;
+    }
+
+    header>div:last-child p {
+        margin-bottom: 2px !important;
+        line-height: 1.4 !important;
+        /* Better readability */
+    }
+
+    h1 {
+        font-size: 2rem !important;
+        /* Reduced to fit on one line */
+        white-space: nowrap !important;
+        /* Force single line */
+        line-height: 1 !important;
+        margin-bottom: 0.25rem !important;
+        letter-spacing: 0.05em !important;
+        /* Positive tracking for uppercase clarity */
+    }
+
+    /* Career Objective & Section Headers size adjustment */
+    h2 {
+        font-size: 1rem !important;
+        margin-bottom: 0.8rem !important;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+        background-color: #f3f4f6 !important;
+        /* Ensure the gray bg prints */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    p,
+    li,
+    span,
+    div {
+        line-height: 1.4 !important;
+        /* Clean, modern line height */
+    }
+
+    /* Hide Research section if it pushes to 3rd page - Optional, but optimizing space first */
 }
 
 @media screen and (max-width: 210mm) {
