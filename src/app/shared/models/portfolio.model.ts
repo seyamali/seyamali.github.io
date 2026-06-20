@@ -36,7 +36,9 @@ export interface Project {
   tools: string;
   link?: string;
   demoLink?: string;
+  githubLink?: string;
   type: 'android' | 'web' | 'c' | 'java' | 'graphics' | 'flutter' | 'npm';
+  image?: string;
 }
 
 export interface Research {

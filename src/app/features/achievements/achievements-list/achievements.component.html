@@ -1,0 +1,51 @@
+<section id="achievements" class="relative py-32 bg-surface transition-colors duration-700 overflow-hidden">
+    <!-- Background Accents -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+
+    <div class="container relative mx-auto px-6">
+        <app-section-header title="Achievements & Leadership"></app-section-header>
+
+        <div class="max-w-5xl mx-auto space-y-8 mt-12">
+            <!-- Certifications -->
+            @for (cert of certifications; track cert.name) {
+            <div class="card-luxury p-8 flex flex-col md:flex-row gap-6 items-start relative hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-500 animate-luxury-slide-up"
+                 [style.animation-delay]="$index * 0.15 + 's'">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
+                    <i class="fas fa-certificate text-2xl"></i>
+                </div>
+                <div class="flex-grow w-full">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="text-accent font-black tracking-widest uppercase text-[10px]">{{ cert.organization }}</span>
+                        <span class="text-[10px] font-bold text-text-muted/60 tracking-widest uppercase">{{ cert.year }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-main mb-2 leading-tight">{{ cert.name }}</h3>
+                    <p class="text-text-muted text-sm leading-relaxed">{{ cert.description }}</p>
+                </div>
+            </div>
+            }
+
+            <!-- Leadership / Activities -->
+            @for (activity of activities; track activity.title) {
+            <div class="card-luxury p-8 flex flex-col md:flex-row gap-6 items-start relative hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-500 animate-luxury-slide-up"
+                 [style.animation-delay]="(certifications.length + $index) * 0.15 + 's'">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <i class="fas fa-users text-2xl"></i>
+                </div>
+                <div class="flex-grow w-full">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="text-primary font-black tracking-widest uppercase text-[10px]">{{ activity.organization }}</span>
+                        <span class="text-[10px] font-bold text-text-muted/60 tracking-widest uppercase">{{ activity.period }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-main mb-2 leading-tight">{{ activity.title }}</h3>
+                    <ul class="list-disc list-inside space-y-1.5 mt-2">
+                        @for (point of activity.activities; track point) {
+                        <li class="text-xs text-text-muted leading-relaxed text-justify">{{ point }}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

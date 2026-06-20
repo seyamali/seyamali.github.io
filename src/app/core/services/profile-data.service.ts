@@ -23,10 +23,11 @@ export class ProfileDataService {
             role: 'Software Engineer (Junior)',
             period: 'April 2024 – Present',
             responsibilities: [
-                'Engineered and optimized core enterprise modules utilizing Angular 18 and .NET Core RESTful APIs.',
-                'Designed and managed high-concurrency MySQL database schemas, improving query response times for industrial reporting.',
-                'Automated internal workflows by developing custom ERP-integrated tools, significantly reducing manual data processing.',
-                'Collaborated in an Agile environment to deliver production-ready code with a focus on SSR stability and modern UI/UX principles.'
+                'Primary frontend developer for 10 of 13 business modules within a 264-component, 64,600-line Angular ERP platform.',
+                'Built the Inventory and HR backend modules end-to-end in ASP.NET Core, on a Clean Architecture system spanning 206 controllers and ~1,046 endpoints.',
+                'Built 3 production dashboards (manufacturing efficiency, attendance analytics, real-time output tracking) using Chart.js and Syncfusion.',
+                'Automated biometric attendance sync and GRN material verification, replacing manual/paper-based processes.',
+                'Collaborated with a 4-person development team, resolving production issues across frontend and backend.'
             ]
         }
     ];
@@ -57,47 +58,47 @@ export class ProfileDataService {
 
     readonly skills: Skill[] = [
         {
-            category: 'Core Engineering',
-            items: ['C', 'Java (OOP)', 'Python', 'C#', 'SQL', 'PHP']
+            category: 'Languages',
+            items: ['C#', 'TypeScript', 'JavaScript', 'Java', 'C', 'Python']
         },
         {
-            category: 'Frameworks & Architecture',
-            items: ['Angular (SSR/SPA)', '.NET Core', 'Flutter', 'Spring Boot']
+            category: 'Frontend',
+            items: ['Angular', 'RxJS', 'Angular SSR (Universal)', 'HTML5', 'CSS3', 'Chart.js / ng2-charts']
         },
         {
-            category: 'Data & Infrastructure',
-            items: ['MySQL', 'SQL Server', 'REST APIs', 'JWT Auth']
+            category: 'Backend',
+            items: ['ASP.NET Core', 'REST API Development', 'Entity Framework Core', 'MediatR']
         },
         {
-            category: 'Research & Intelligence',
-            items: ['Deep Learning', 'Computer Vision', 'Image Processing', 'CNN Architectures']
+            category: 'Database',
+            items: ['SQL Server', 'MySQL']
         },
         {
-            category: 'Dev Ecosystem',
-            items: ['Git/GitHub', 'Cloud Deployment', 'UI/UX Design', 'Agile Methodologies']
+            category: 'Auth & Security',
+            items: ['JWT Authentication', 'Role-Based Access Control']
+        },
+        {
+            category: 'Tools',
+            items: ['Git', 'GitHub', 'Visual Studio', 'VS Code']
+        },
+        {
+            category: 'Concepts',
+            items: ['Clean Architecture', 'CQRS', 'Modular Components', 'OOP', 'SOLID Principles', 'ERP Systems', 'Agile/Hybrid Workflow']
         }
     ];
 
     readonly research: Research[] = [
         {
-            title: 'Utilizing Advanced Image Processing Techniques for Precise Quantification of Leaf Diseases in Money Plant',
-            type: 'thesis',
-            description: [
-                'Architected a multi-stage image processing pipeline for early-stage disease detection in ornamental vegetation.',
-                'Evaluated state-of-the-art CNN models to achieve high-precision quantification of Bacterial Wilt and Manganese Poisoning.',
-                'Utilized Python and TensorFlow to build the foundational research framework.'
-            ]
-        },
-        {
             title: 'Money Plant Disease Atlas: A Comprehensive Dataset for Disease Classification in Ornamental Horticulture',
             type: 'publication',
             journal: 'Data in Brief (Elsevier) | Volume: 58 | Pages: 111216',
-            date: 'February 2025',
+            date: 'December 2024',
             authors: ['Md. Seyam Ali Biswas', 'MD Hasan Ahmad', 'Sajib Bormon', 'Sohanur Rahman Sohag', 'Amatul Bushra Akhi'],
             link: 'https://doi.org/10.1016/j.dib.2024.111216',
             description: [
-                'Curated and published a standardized dataset of high-resolution biometric imagery for horticultural disease classification.',
-                'Peer-reviewed and successfully indexed by Elsevier, contributing a significant open-source resource for global plant pathology AI.'
+                'Created a 1,872-image dataset (expanded to 6,000 via augmentation) classifying 3 categories of Money Plant leaf health (Bacterial Wilt, Manganese Toxicity, Healthy).',
+                'Designed and validated an FNet-based deep learning model (Fourier-transform architecture), achieving 99.95% test accuracy on the augmented dataset (95.10% on raw data).',
+                'Led conceptualization, data curation, methodology, and validation as first author on a peer-reviewed Elsevier publication.'
             ]
         }
     ];
@@ -105,50 +106,29 @@ export class ProfileDataService {
     readonly projects: Project[] = [
         {
             title: 'Raw Nation (Official Site)',
-            description: 'Architected and developed the comprehensive frontend infrastructure for Raw Nation\'s official e-commerce platform, ensuring a seamless, high-performance shopping experience with Angular 21 SSR.',
-            tools: 'Angular 21, SSR, Bootstrap, Custom CSS',
+            description: 'Built a 30-component, SSR-enabled e-commerce frontend with 21 routes, 3 payment gateways (bKash, SSLCommerz, COD), per-page SEO, GA4, and Facebook Pixel tracking.',
+            tools: 'Angular SSR, Bootstrap, Custom CSS',
             link: 'https://rawnation.net/',
-            type: 'web'
+            type: 'web',
+            image: 'assets/images/rawnation.png'
         },
         {
             title: 'Aurelia Editor',
-            description: 'A high-fidelity, customizable rich text editor for modern web applications with seamless integration support.',
+            description: 'A framework-agnostic rich-text editor published as an MIT-licensed npm package (@seyamali/aurelia-editor), built on Meta\'s Lexical framework with 16+ plugins including tables, Markdown/Word import-export, PDF export, comments, and autosave.',
             tools: 'TypeScript, NPM, Rollup',
             link: 'https://www.npmjs.com/package/@seyamali/aurelia-editor',
-            demoLink: 'https://aurelia-editor-playground-theta.vercel.app/',
-            type: 'npm'
+            demoLink: 'https://aurelia-editor.pro.bd/',
+            githubLink: 'https://github.com/seyamali/aurelia-editor',
+            type: 'npm',
+            image: 'assets/images/aurelia.png'
         },
         {
-            title: 'Bahari Financial Engine',
-            description: 'A robust mobile orchestration tool for dynamic invoice generation and financial reporting, facilitating seamless itemized ledger exports via PDF.',
-            tools: 'Flutter, Dart, Provider States',
-            type: 'flutter'
-        },
-        {
-            title: 'Beyond Decimal (Arithmetic System)',
-            description: 'A mathematical computation engine designed for multi-base number system transitions and complex arithmetic conversions with real-time stability.',
-            tools: 'Android Studio, Java, Material Design 3',
-            type: 'android'
-        },
-        {
-            title: 'Enterprise Student Management',
-            description: 'Developed a high-performance record-management system using optimized linked-list structures for high-speed data retrieval and administrative efficiency.',
-            tools: 'C (Data Structures)',
-            link: 'https://github.com/seyamali/Enterprise-Student-Management-System',
-            type: 'c'
-        },
-        {
-            title: 'Orion Hotel Oracle',
-            description: 'A full-scale hospitality management suite for real-time room orchestration, automated inventory control, and secure customer data handling.',
-            tools: 'Java (Swing/JDBC UI)',
-            link: 'https://github.com/seyamali/Orion-Hotel-Oracle',
-            type: 'java'
-        },
-        {
-            title: 'Village Rendering Simulation',
-            description: 'An immersive 3D rural simulation leveraging OpenGL primitives to demonstrate complex geometric calculations and real-time graphics rendering.',
-            tools: 'C++ & OpenGL',
-            type: 'graphics'
+            title: 'PocketLedger',
+            description: 'Personal finance app with multi-account tracking, loan management, real-time Firestore sync, and biometric lock.',
+            tools: 'Flutter, Dart, Firebase, fl_chart',
+            link: 'https://github.com/seyamali/POCKETLEDGER',
+            type: 'flutter',
+            image: 'assets/images/pocketledger.png'
         }
     ];
 

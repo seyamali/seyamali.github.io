@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Project } from '../../models/portfolio.model';
 
 @Component({
     selector: 'app-project-card',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, NgOptimizedImage],
     templateUrl: './project-card.component.html',
     styleUrl: './project-card.component.css'
 })
@@ -30,5 +30,10 @@ export class ProjectCardComponent {
         if (link.includes('github.com')) return 'Source';
         if (type === 'npm') return 'NPM';
         return 'Live Link';
+    }
+
+    getToolChips(tools: string): string[] {
+        if (!tools) return [];
+        return tools.split(',').map(t => t.trim());
     }
 }

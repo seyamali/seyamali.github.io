@@ -39,7 +39,7 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden items-center lg:flex gap-1 z-10">
-                @for (link of ['Experience', 'Skills', 'Research', 'Projects', 'Education']; track link) {
+                @for (link of ['Experience', 'Projects', 'Research', 'Skills', 'Education', 'Achievements']; track link) {
                 <a [href]="'#' + link.toLowerCase()"
                     class="px-5 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-text-muted hover:text-accent transition-all duration-300 relative group animate-luxury-slide-up"
                     [style.animation-delay]="$index * 0.1 + 's'">
@@ -55,6 +55,10 @@
                     <a href="https://github.com/seyamali" target="_blank"
                         class="text-text-muted hover:text-accent transition-all duration-500 hover:scale-110 text-xl">
                         <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/seyam-ali/" target="_blank"
+                        class="text-text-muted hover:text-accent transition-all duration-500 hover:scale-110 text-xl">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                     <app-theme-toggle class="scale-110"></app-theme-toggle>
                 </div>
@@ -105,7 +109,7 @@
                 <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-text-main">Navigation</p>
             </div>
 
-            @for (link of ['Experience', 'Skills', 'Research', 'Projects', 'Education']; track link) {
+            @for (link of ['Experience', 'Projects', 'Research', 'Skills', 'Education', 'Achievements']; track link) {
             <a [href]="'#' + link.toLowerCase()" (click)="toggleMenu()"
                 class="group flex items-center justify-between p-3 rounded-2xl hover:bg-surface/50 transition-all duration-300 active:scale-95 animate-luxury-slide-up border border-transparent hover:border-white/5"
                 [style.animation-delay]="$index * 0.1 + 's'">
@@ -158,7 +162,7 @@
                         <a href="https://github.com/seyamali" target="_blank"
                             class="text-text-main hover:text-accent transition-colors text-xl"><i
                                 class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/seyamali" target="_blank"
+                        <a href="https://www.linkedin.com/in/seyam-ali/" target="_blank"
                             class="text-text-main hover:text-[#0077b5] transition-colors text-xl"><i
                                 class="fab fa-linkedin"></i></a>
                     </div>

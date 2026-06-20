@@ -100,31 +100,26 @@ section {
 
     /* Override Tailwind utility spacing for print */
     header {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: flex-end !important;
-        flex-wrap: nowrap !important;
+        display: block !important;
         width: 100% !important;
         padding-bottom: 1rem !important;
         /* More elegant spacing */
         margin-bottom: 1.5rem !important;
         border-bottom-width: 4px !important;
         /* Thicker, bolder line */
-        gap: 20px !important;
+        border-bottom-color: black !important;
     }
 
     /* Target the first div (Name/Title) */
     header>div:first-child {
         text-align: left !important;
-        flex: 1 !important;
+        margin-bottom: 1rem !important;
     }
 
-    /* Force right alignment for contact info in print */
+    /* Force left alignment for contact info in print */
     header>div:last-child {
-        text-align: right !important;
-        width: auto !important;
-        white-space: nowrap !important;
+        text-align: left !important;
+        width: 100% !important;
         display: block !important;
     }
 

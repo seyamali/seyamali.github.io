@@ -8,6 +8,7 @@ import { SkillsComponent } from '../../../features/skills/skills-grid/skills.com
 import { ResearchComponent } from '../../../features/research/research-list/research.component';
 import { ProjectsComponent } from '../../../features/projects/projects-grid/projects.component';
 import { EducationComponent } from '../../../features/education/education-list/education.component';
+import { AchievementsComponent } from '../../../features/achievements/achievements-list/achievements.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -21,7 +22,8 @@ import { EducationComponent } from '../../../features/education/education-list/e
     SkillsComponent,
     ResearchComponent,
     ProjectsComponent,
-    EducationComponent
+    EducationComponent,
+    AchievementsComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css'

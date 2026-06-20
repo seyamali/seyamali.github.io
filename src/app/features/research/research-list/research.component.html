@@ -42,6 +42,23 @@
                             {{ item.title }}
                         </h3>
 
+                        @if (item.type === 'publication') {
+                        <div class="flex flex-wrap gap-4 md:gap-6 mb-8">
+                            <div class="glass-effect px-5 py-3 rounded-xl border border-black/[0.03] dark:border-white/[0.05] min-w-[110px] text-center">
+                                <p class="text-xl font-black text-text-main mb-0.5">1,872</p>
+                                <p class="text-[8px] font-bold uppercase tracking-wider text-text-muted">Images</p>
+                            </div>
+                            <div class="glass-effect px-5 py-3 rounded-xl border border-black/[0.03] dark:border-white/[0.05] min-w-[110px] text-center">
+                                <p class="text-xl font-black text-text-main mb-0.5">3</p>
+                                <p class="text-[8px] font-bold uppercase tracking-wider text-text-muted">Disease Classes</p>
+                            </div>
+                            <div class="glass-effect px-5 py-3 rounded-xl border border-black/[0.03] dark:border-white/[0.05] min-w-[110px] text-center">
+                                <p class="text-xl font-black text-text-main mb-0.5">99.95%</p>
+                                <p class="text-[8px] font-bold uppercase tracking-wider text-text-muted">Accuracy</p>
+                            </div>
+                        </div>
+                        }
+
                         <div class="space-y-6">
                             @for (line of item.description; track line) {
                             <div class="flex gap-6 group/item">
@@ -54,7 +71,7 @@
                         </div>
 
                         @if (item.link) {
-                        <div class="mt-12">
+                        <div class="mt-12 relative z-30">
                             <a [href]="item.link" target="_blank"
                                 class="text-sm font-black text-text-main uppercase tracking-widest flex items-center gap-3 group/link">
                                 Read Full Paper

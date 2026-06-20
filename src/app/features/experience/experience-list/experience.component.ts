@@ -14,6 +14,4 @@ import { TimelineItemComponent } from '../../../shared/components/timeline-item/
 export class ExperienceComponent {
     private dataService = inject(ProfileDataService);
     experiences = this.dataService.experiences;
-    certifications = this.dataService.certifications;
-    activities = this.dataService.activities;
 }

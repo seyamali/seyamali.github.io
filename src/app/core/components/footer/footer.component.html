@@ -10,12 +10,11 @@
     <div class="container relative mx-auto px-4 md:px-6">
         <!-- High-Impact CTA Section -->
         <div
-            class="mb-20 md:mb-32 text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:items-end">
+            class="mb-20 md:mb-32 p-8 md:p-16 rounded-[2.5rem] bg-surface/50 dark:bg-surface/30 border border-black/[0.03] dark:border-white/[0.05] text-center lg:text-left grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:items-end relative overflow-hidden">
             <div class="lg:col-span-8">
                 <h2
                     class="text-4xl md:text-7xl lg:text-8xl font-black text-text-main tracking-tighter leading-[1] md:leading-[0.9] mb-10 md:mb-12 animate-luxury-slide-up">
-                    Ready to <span class="text-gradient italic">architect</span> <br class="hidden md:block"> the
-                    future?
+                    Ready to <span class="text-gradient italic">build</span> <br class="hidden md:block"> something together?
                 </h2>
                 <div class="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
                     <a [href]="'mailto:' + profile.email"
@@ -63,16 +62,14 @@
                         </span>
                     </a>
                     <p class="text-text-muted leading-relaxed font-medium text-lg max-w-md mx-auto lg:mx-0 mb-10">
-                        Architecting high-performance digital systems and engineering seamless user experiences with a
-                        focus
-                        on precision, scalability, and modern aesthetics.
+                        Software Engineer specializing in Angular, ASP.NET Core, and enterprise ERP systems. First author of a peer-reviewed Elsevier publication (2024).
                     </p>
                     <div class="flex gap-4 justify-center lg:justify-start">
                         <a [href]="profile.github" target="_blank"
                             class="w-12 h-12 flex items-center justify-center rounded-2xl bg-surface border border-black/[0.03] dark:border-white/[0.05] text-text-main hover:bg-text-main hover:text-bg-base transition-all duration-500 shadow-sm hover:shadow-luxury hover:-translate-y-2">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="https://linkedin.com/in/seyamali" target="_blank"
+                        <a href="https://www.linkedin.com/in/seyam-ali/" target="_blank"
                             class="w-12 h-12 flex items-center justify-center rounded-2xl bg-surface border border-black/[0.03] dark:border-white/[0.05] text-text-main hover:bg-[#0077b5] hover:text-white transition-all duration-500 shadow-sm hover:shadow-luxury hover:-translate-y-2">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
@@ -106,7 +103,7 @@
                         <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-accent">Development</h4>
                     </div>
                     <ul class="space-y-6">
-                        @for (link of ['Projects', 'Education']; track link) {
+                        @for (link of ['Projects', 'Education', 'Achievements']; track link) {
                         <li>
                             <a [href]="'#' + link.toLowerCase()"
                                 class="group flex items-center gap-3 text-text-muted hover:text-text-main font-bold transition-all duration-300">
@@ -175,8 +172,7 @@
                     <div class="flex items-start gap-3">
                         <div class="w-1.5 h-1.5 rounded-full bg-success animate-pulse mt-1.5 shrink-0"></div>
                         <p class="text-[11px] font-bold text-text-muted leading-relaxed">
-                            Currently available for <span class="text-text-main">senior engineering roles</span>,
-                            architectural consultations, and research collaborations.
+                            Currently open to Software Engineer opportunities and research collaborations.
                         </p>
                     </div>
                 </div>

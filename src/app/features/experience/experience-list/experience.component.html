@@ -20,41 +20,5 @@
             </div>
             }
         </div>
-
-        <!-- Certifications -->
-        <div class="relative py-24 my-24 border-y border-black/[0.03] dark:border-white/[0.05]">
-            <app-section-header title="Expertise Validation"
-                subtitle="Industry recognized <span class='text-gradient'>certifications</span> &amp; honors"></app-section-header>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
-                @for (cert of certifications; track cert.name) {
-                <div class="card-luxury p-10 group relative h-full">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-certificate text-4xl"></i>
-                    </div>
-                    <span class="text-accent font-black tracking-widest uppercase text-[10px] mb-4 block">{{
-                        cert.organization }}</span>
-                    <h3
-                        class="text-2xl font-bold text-text-main mb-4 group-hover:text-accent transition-colors leading-tight">
-                        {{ cert.name }}</h3>
-                    <p class="text-text-muted text-sm leading-relaxed mb-6">{{ cert.description }}</p>
-                    <div class="text-[10px] font-bold text-text-muted/60 tracking-widest uppercase">{{ cert.year }}
-                    </div>
-                </div>
-                }
-            </div>
-        </div>
-
-        <!-- Activities -->
-        <div class="mt-40">
-            <app-section-header title="Beyond the Code"
-                subtitle="Engaging in <span class='text-gradient'>leadership</span> &amp; mentorship"></app-section-header>
-            <div class="max-w-5xl mx-auto">
-                @for (activity of activities; track activity.title) {
-                <app-timeline-item [title]="activity.title" [organization]="activity.organization"
-                    [period]="activity.period" [points]="activity.activities">
-                </app-timeline-item>
-                }
-            </div>
-        </div>
     </div>
 </section>

@@ -14,137 +14,219 @@
                 <td>
                     <div id="cv-content" class="cv-container bg-white">
                         <!-- Header -->
-                        <header
-                            class="border-b-4 border-black pb-6 mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-4 md:gap-0">
-                            <div>
-                                <h1 class="text-4xl font-bold tracking-normal uppercase mb-1">{{ profile.name }}</h1>
-                                <p class="text-xl font-bold text-gray-700 tracking-wide">{{ profile.title }}</p>
+                        <header class="border-b-4 border-black pb-6 mb-8">
+                            <div class="mb-4">
+                                <h1 class="text-3xl font-bold tracking-normal text-gray-900 mb-1">Md. Seyam Ali Biswas</h1>
+                                <p class="text-lg font-bold text-gray-700 tracking-wide font-outfit">Software Engineer</p>
                             </div>
-                            <div class="text-left md:text-right text-xs space-y-1 font-semibold text-gray-600">
-                                <p><i class="fas fa-envelope mr-2"></i>{{ profile.email }}</p>
-                                <p><i class="fas fa-phone mr-2"></i>{{ profile.phone }}</p>
-                                <p><i class="fas fa-map-marker-alt mr-2"></i>{{ profile.location }}</p>
-                                <p><i class="fab fa-github mr-2"></i>github.com/{{ profile.github.split('/').pop() }}
+                            <div class="text-xs space-y-1 font-semibold text-gray-600">
+                                <p>
+                                    seyamhossain482@gmail.com &nbsp;|&nbsp; 
+                                    +880 1989-424982 &nbsp;|&nbsp; 
+                                    Gazipur, Dhaka, Bangladesh
+                                </p>
+                                <p>
+                                    linkedin.com/in/seyam-ali/ &nbsp;|&nbsp; 
+                                    github.com/seyamali &nbsp;|&nbsp; 
+                                    seyamali.github.io
                                 </p>
                             </div>
                         </header>
 
-                        <!-- Career Objective -->
+                        <!-- PROFILE SUMMARY -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Career Objective</h2>
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                PROFILE SUMMARY</h2>
                             <p class="text-sm leading-relaxed text-gray-800 text-justify">
-                                {{ profile.summary }}
+                                Software Engineer with 2+ years of experience building enterprise ERP systems in Angular and ASP.NET Core. First author of a peer-reviewed publication in Data in Brief (Elsevier, 2024), applying machine learning to plant disease classification — bringing applied AI/research experience alongside strong full-stack engineering fundamentals. Focused on secure REST API design, SQL Server performance optimization, and workflow automation for business operations.
                             </p>
                         </section>
 
-                        <!-- Technical Skills -->
+                        <!-- WORK EXPERIENCE -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Technical Skills</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                                <div *ngFor="let group of skills" class="mb-2">
-                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">{{ group.category }}
-                                    </p>
-                                    <p class="text-gray-700">{{ group.items.join(', ') }}</p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Professional Experience -->
-                        <section class="mb-8">
-                            <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Professional Experience</h2>
-                            <div *ngFor="let exp of experiences" class="mb-6 last:mb-0">
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                WORK EXPERIENCE</h2>
+                            <div class="mb-6 last:mb-0">
                                 <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
-                                    <h3 class="text-sm font-bold text-gray-900">{{ exp.company }}</h3>
-                                    <span class="text-[10px] font-bold text-gray-500 uppercase">{{ exp.period }}</span>
+                                    <h3 class="text-sm font-bold text-gray-900 font-outfit">Islam Garments Ltd.</h3>
+                                    <span class="text-[10px] font-bold text-gray-500 uppercase">April 2024 – Present</span>
                                 </div>
-                                <p class="text-[11px] font-bold text-blue-800 uppercase tracking-normal mb-2">{{
-                                    exp.role }}</p>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li *ngFor="let res of exp.responsibilities"
-                                        class="text-xs text-gray-700 leading-snug text-justify flex items-start">
-                                        <span class="mr-2">•</span> <span>{{ res }}</span>
+                                <p class="text-[11px] font-bold text-blue-800 uppercase tracking-normal mb-2">Software Engineer (Junior Programmer)</p>
+                                <ul class="list-disc list-inside space-y-1.5">
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Primary frontend developer for 10 of 13 business modules within a 264-component, 64,600-line Angular ERP platform.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Built the Inventory and HR backend modules end-to-end in ASP.NET Core, on a Clean Architecture system spanning 206 controllers and ~1,046 endpoints.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Built 3 production dashboards (manufacturing efficiency, attendance analytics, real-time output tracking) using Chart.js and Syncfusion.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Automated biometric attendance sync and GRN material verification, replacing manual/paper-based processes.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Collaborated with a 4-person development team, resolving production issues across frontend and backend.</span>
                                     </li>
                                 </ul>
                             </div>
                         </section>
 
-                        <!-- Academic Background -->
+                        <!-- TECHNICAL SKILLS -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Academic Background</h2>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="border-b-2 border-gray-200">
-                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500">
-                                                Qualification</th>
-                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500">Institution
-                                            </th>
-                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500 text-center">
-                                                Year</th>
-                                            <th class="py-2 text-[10px] font-bold uppercase text-gray-500 text-right">
-                                                Result</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let edu of education"
-                                            class="border-b border-gray-100 last:border-0">
-                                            <td class="py-3 pr-4">
-                                                <p class="text-xs font-bold text-gray-900">{{ edu.degree }}</p>
-                                                <p class="text-[10px] text-gray-500">{{ edu.subject }}</p>
-                                            </td>
-                                            <td class="py-3 pr-4 text-xs font-semibold text-gray-700">{{ edu.institution
-                                                }}</td>
-                                            <td class="py-3 text-xs font-bold text-gray-900 text-center">{{
-                                                edu.passingYear }}</td>
-                                            <td class="py-3 text-xs font-bold text-blue-800 text-right">{{ edu.result
-                                                }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                TECHNICAL SKILLS</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-xs">
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Languages</p>
+                                    <p class="text-gray-700">C#, TypeScript, JavaScript, Java, C, Python</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Frontend</p>
+                                    <p class="text-gray-700">Angular, RxJS, Angular SSR (Universal), HTML5, CSS3, Chart.js / ng2-charts</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Backend</p>
+                                    <p class="text-gray-700">ASP.NET Core, REST API Development, Entity Framework Core, MediatR</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Database</p>
+                                    <p class="text-gray-700">SQL Server, MySQL</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Auth & Security</p>
+                                    <p class="text-gray-700">JWT Authentication, Role-Based Access Control</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Tools</p>
+                                    <p class="text-gray-700">Git, GitHub, Visual Studio, VS Code</p>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <p class="font-bold uppercase mb-1 text-gray-900 leading-none">Concepts</p>
+                                    <p class="text-gray-700">Clean Architecture, CQRS, Modular Components, OOP, SOLID Principles, ERP Systems, Agile/Hybrid Workflow</p>
+                                </div>
                             </div>
                         </section>
 
-                        <!-- Research & Publications -->
-                        <section class="mb-8" *ngIf="research.length > 0">
+                        <!-- PUBLICATION -->
+                        <section class="mb-8">
                             <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Research & Publications</h2>
-                            <div *ngFor="let item of research" class="mb-6 last:mb-0">
-                                <h3 class="text-xs font-bold text-gray-900 mb-1 leading-tight">{{ item.title }}
-                                </h3>
-                                <p class="text-[10px] text-gray-500 mb-2 font-bold">{{ item.journal }} | {{ item.date }}
-                                </p>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li *ngFor="let desc of item.description"
-                                        class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
-                                        <span class="mr-2">•</span> <span>{{ desc }}</span>
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                PUBLICATION</h2>
+                            <div class="mb-6 last:mb-0">
+                                <h3 class="text-xs font-bold text-gray-900 mb-1 leading-tight font-outfit">Main Author: Money Plant Disease Atlas: A Comprehensive Dataset for Disease Classification in Ornamental Horticulture</h3>
+                                <p class="text-[10px] text-gray-500 mb-2 font-bold">Data in Brief (Elsevier, peer-reviewed), Volume 58, 2024 | DOI: 10.1016/j.dib.2024.111216</p>
+                                <ul class="list-disc list-inside space-y-1.5">
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Created a 1,872-image dataset (expanded to 6,000 via augmentation) classifying 3 categories of Money Plant leaf health, in collaboration with an agricultural ministry expert.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Designed and validated an FNet-based deep learning model (Fourier-transform architecture), achieving 99.95% test accuracy on the augmented dataset (95.10% on raw data).</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Led conceptualization, data curation, methodology, and validation as first author on a peer-reviewed Elsevier publication.</span>
                                     </li>
                                 </ul>
                             </div>
                         </section>
 
-                        <!-- Key Projects -->
+                        <!-- PROJECTS -->
                         <section class="mb-8">
                             <h2
-                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black">
-                                Key Projects</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                                <div *ngFor="let proj of projects" class="border-l-2 border-gray-100 pl-3">
-                                    <h3 class="text-xs font-bold text-gray-900 leading-tight mb-1">{{ proj.title }}
-                                    </h3>
-                                    <p class="text-[10px] text-gray-600 leading-snug mb-1 text-justify">{{
-                                        proj.description }}</p>
-                                    <p class="text-[9px] font-semibold text-accent uppercase tracking-normal">{{
-                                        proj.tools }}</p>
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                PROJECTS</h2>
+                            <div class="space-y-6">
+                                <!-- Raw Nation -->
+                                <div>
+                                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                        <h3 class="text-xs font-bold text-gray-900 font-outfit">Raw Nation – E-commerce Frontend (Angular)</h3>
+                                        <span class="text-[10px] font-bold text-gray-500 uppercase">Islam Garments Ltd. | Live Site</span>
+                                    </div>
+                                    <ul class="list-disc list-inside space-y-1.5 pl-3 border-l-2 border-gray-100">
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Built a 30-component, SSR-enabled e-commerce frontend (Angular) with 21 routes and full cart/checkout flow.</span>
+                                        </li>
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Integrated 3 payment gateways (bKash, SSLCommerz, COD) with per-page SEO, GA4, and Pixel tracking.</span>
+                                        </li>
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Enforced production performance budgets and lazy-loaded routing across the app.</span>
+                                        </li>
+                                    </ul>
                                 </div>
+
+                                <!-- Aurelia Editor -->
+                                <div>
+                                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                        <h3 class="text-xs font-bold text-gray-900 font-outfit">Aurelia Editor (TypeScript)</h3>
+                                        <span class="text-[10px] font-bold text-gray-500 uppercase">Live Demo | GitHub</span>
+                                    </div>
+                                    <ul class="list-disc list-inside space-y-1.5 pl-3 border-l-2 border-gray-100">
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Published as an MIT-licensed npm package (&#64;seyamali/aurelia-editor) — a rich-text editor on Meta's Lexical framework with 16+ plugins (tables, Markdown/Word import-export, PDF export, comments, autosave).</span>
+                                        </li>
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Designed a custom plugin architecture and SDK facade layer standardizing toolbar/command registration on Lexical's core APIs.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- PocketLedger -->
+                                <div>
+                                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                        <h3 class="text-xs font-bold text-gray-900 font-outfit">PocketLedger (Flutter/Dart)</h3>
+                                        <span class="text-[10px] font-bold text-gray-500 uppercase">personal project, unpublished | GitHub</span>
+                                    </div>
+                                    <ul class="list-disc list-inside space-y-1.5 pl-3 border-l-2 border-gray-100">
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Built a 70-screen Flutter finance app (~24K lines) with Firebase Auth, Firestore, and Storage.</span>
+                                        </li>
+                                        <li class="text-[11px] text-gray-700 leading-snug text-justify flex items-start">
+                                            <span class="mr-2">•</span> <span>Implemented real-time Firestore sync, offline persistence, fl_chart analytics, and biometric/PIN lock.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- EDUCATION -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                EDUCATION</h2>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                                <div>
+                                    <h3 class="text-xs font-bold text-gray-900 font-outfit">Bachelor of Science in Computer Science & Engineering</h3>
+                                    <p class="text-[10px] text-gray-500">Daffodil International University</p>
+                                </div>
+                                <div class="text-left md:text-right">
+                                    <span class="text-xs font-bold text-blue-800">CGPA: 3.84/4.00</span>
+                                    <p class="text-[10px] text-gray-500">Class of 2024</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- LEADERSHIP -->
+                        <section class="mb-8">
+                            <h2
+                                class="text-sm font-bold uppercase tracking-wider bg-gray-100 px-3 py-1 inline-block mb-3 border-l-4 border-black font-outfit">
+                                LEADERSHIP</h2>
+                            <div class="mb-6 last:mb-0">
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1">
+                                    <h3 class="text-sm font-bold text-gray-900 font-outfit">Lab Prefect – Programming and Problem-Solving Lab</h3>
+                                    <span class="text-[10px] font-bold text-gray-500 uppercase">Daffodil International University | 2022 – 2023</span>
+                                </div>
+                                <ul class="list-disc list-inside space-y-1.5">
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Mentored 30+ students in programming fundamentals and debugging during weekly lab sessions.</span>
+                                    </li>
+                                    <li class="text-xs text-gray-700 leading-snug text-justify flex items-start">
+                                        <span class="mr-2">•</span> <span>Provided one-on-one technical guidance, helping students troubleshoot coding assignments and improve problem-solving skills.</span>
+                                    </li>
+                                </ul>
                             </div>
                         </section>
                     </div>

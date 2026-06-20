@@ -1,61 +1,63 @@
 <div class="card-luxury group h-full flex flex-col overflow-hidden animate-luxury-fade-in group/card relative">
-    <!-- Global Link Overlay -->
-    @if (project.link) {
-    <a [href]="project.link" target="_blank" [attr.aria-label]="'View ' + project.title"
-        class="absolute inset-0 z-10 focus:outline-none"></a>
-    }
-
-    <!-- Icon / Image Area -->
-    <div
-        class="relative h-48 flex items-center justify-center overflow-hidden bg-bg-base/50 transition-colors duration-700">
+    
+    <!-- [Preview image/screenshot at top] -->
+    <div class="relative h-48 w-full overflow-hidden bg-bg-base/50 transition-colors duration-700">
         <!-- Shimmer Effect -->
         <div
-            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out">
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out z-10 pointer-events-none">
         </div>
-
-        <div
-            class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-        </div>
-        <div
-            class="relative z-0 text-6xl text-accent transition-all duration-700 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-glow">
-            <i [class]="getIconByType(project.type)"></i>
-        </div>
+        
+        <img [ngSrc]="project.image || 'assets/images/seyam.png'" 
+             fill 
+             class="object-cover transition-transform duration-700 group-hover:scale-105" 
+             loading="lazy" 
+             [alt]="project.title + ' Preview'">
     </div>
 
     <!-- Content Area -->
     <div class="flex flex-grow flex-col p-6 md:p-8">
+        <!-- [Title] -->
         <h3 class="mb-3 text-2xl font-bold text-text-main group-hover:text-accent transition-colors relative z-0">
             {{ project.title }}
         </h3>
 
-        <p class="flex-grow mb-8 text-text-muted leading-relaxed relative z-0">
+        <!-- [One-line description] -->
+        <p class="flex-grow mb-6 text-text-muted leading-relaxed relative z-0">
             {{ project.description }}
         </p>
 
-        <div
-            class="flex items-center justify-between pt-6 border-t border-black/[0.03] dark:border-white/[0.05] relative z-20">
-            <span
-                class="px-4 py-1.5 text-[10px] font-extrabold tracking-widest uppercase rounded-full bg-accent/5 text-accent border border-accent/10">
-                {{ project.tools }}
+        <!-- [Tech tag chips] -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            @for (chip of getToolChips(project.tools); track chip) {
+            <span class="px-3 py-1 text-[10px] font-extrabold tracking-wider uppercase rounded-full bg-accent/5 text-accent border border-accent/10">
+                {{ chip }}
             </span>
+            }
+        </div>
 
-            <div class="flex items-center gap-4">
-                @if (project.link) {
-                <a [href]="project.link" target="_blank"
-                    class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
-                    {{ getLinkLabel(project.link, project.type) }}
-                    <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
-                </a>
-                }
-                @if (project.demoLink) {
-                <a [href]="project.demoLink" target="_blank"
-                    class="flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-hover transition-colors group/link">
-                    Demo
-                    <i
-                        class="fas fa-external-link-alt text-xs transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"></i>
-                </a>
-                }
-            </div>
+        <!-- [Link buttons] -->
+        <div class="flex items-center gap-4 pt-4 border-t border-black/[0.03] dark:border-white/[0.05] relative z-20 mt-auto">
+            @if (project.githubLink) {
+            <a [href]="project.githubLink" target="_blank"
+                class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
+                Source
+                <i class="fab fa-github text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+            }
+            @if (project.link) {
+            <a [href]="project.link" target="_blank"
+                class="flex items-center gap-2 text-sm font-bold text-text-main hover:text-accent transition-colors group/link">
+                {{ getLinkLabel(project.link, project.type) }}
+                <i class="fas fa-arrow-right text-xs transition-transform group-hover/link:translate-x-1"></i>
+            </a>
+            }
+            @if (project.demoLink) {
+            <a [href]="project.demoLink" target="_blank"
+                class="flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-hover transition-colors group/link">
+                Demo
+                <i class="fas fa-external-link-alt text-xs transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"></i>
+            </a>
+            }
         </div>
     </div>
 </div>

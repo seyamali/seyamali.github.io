@@ -37,7 +37,7 @@
                         <!-- Counter or Category Badge -->
                         <span
                             class="text-[10px] font-black uppercase tracking-[0.4em] text-text-muted/30 group-hover:text-accent/40 transition-colors">
-                            Tech Stack 0{{$index + 1}}
+                            {{ group.category }}
                         </span>
                     </div>
 
@@ -54,7 +54,7 @@
                             [style.animation-delay]="($index * 0.05) + 0.3 + 's'">
                             <!-- Skill Tag - Luxury Obsidian/Glass Style -->
                             <span
-                                class="relative block px-5 py-2.5 text-xs font-bold text-text-muted rounded-xl border border-black/[0.03] dark:border-white/[0.05] bg-bg-base overflow-hidden transition-all duration-500 group-hover/skill:text-white group-hover/skill:shadow-glow group-hover/skill:-translate-y-1">
+                                class="relative block px-5 py-2.5 text-xs font-bold text-text-muted rounded-full border border-black/[0.03] dark:border-white/[0.05] bg-bg-base overflow-hidden transition-all duration-500 group-hover/skill:text-white group-hover/skill:shadow-glow group-hover/skill:-translate-y-1">
                                 <!-- Reflective Layer -->
                                 <div
                                     class="absolute inset-0 bg-accent translate-y-full group-hover/skill:translate-y-0 transition-transform duration-500 ease-out">
